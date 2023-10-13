@@ -34,8 +34,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.G_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-<<<<<<< HEAD
         run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=Chaitanya-087_cycles-rest-api
-=======
-        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=Chaitanya-087_cycles-rest-api
->>>>>>> 5cf803e14c5af93ec4134ae11b46f67da6eb0dbc
