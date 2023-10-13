@@ -128,7 +128,6 @@ public class CartService {
         for (CartItem cartItem : cart.getCartItems()) {
             processCartItem(cartItem, user);
         }
-        System.out.println("herrooooooo......");
         cart.getCartItems().clear();
         return cart;
     }
