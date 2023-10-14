@@ -51,3 +51,6 @@ jobs:
               echo "Code coverage is below 80%"
               exit 1  # Fail the workflow if coverage is below 80%
             fi
+      - name: Pull Request Stats
+        uses: flowwer-dev/pull-request-stats@v2.11.0
+    
