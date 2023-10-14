@@ -64,6 +64,7 @@ public class CycleController {
             }
             return cycleRepository.findAll();
         }
+        System.out.println("Cycle not found");
         return new ArrayList<>();
     }
 
