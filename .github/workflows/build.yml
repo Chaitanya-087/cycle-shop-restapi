@@ -40,3 +40,14 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.G_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=chaitanya-087_cycleshop-rest-api
+      - name: Check Code Coverage
+        run: |
+            mvn jacoco:prepare-agent verify
+            mvn jacoco:report
+            coverage=$(grep -Po 'Total[^%]*\K[0-9.]+' target/site/jacoco/index.html)
+            if (( $(echo "$coverage >= 80" | bc -l) )); then
+              echo "Code coverage is above 80%"
+            else
+              echo "Code coverage is below 80%"
+              exit 1  # Fail the workflow if coverage is below 80%
+            fi
