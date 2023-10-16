@@ -30,7 +30,6 @@ class CycleshopApplicationTests {
 	@BeforeAll
 	public static void init() {
 		restTemplate = new RestTemplate();
-
 	}
 
 	@BeforeEach
