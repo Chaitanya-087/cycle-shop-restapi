@@ -82,6 +82,7 @@ public class CycleController {
             }
             return cycleRepository.findAll();
         }
+        System.out.println("triggerrrr ......");
         return new ArrayList<>();
     }
 
