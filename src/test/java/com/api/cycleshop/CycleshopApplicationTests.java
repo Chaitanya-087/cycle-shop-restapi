@@ -46,4 +46,6 @@ class CycleshopApplicationTests {
 		assertEquals(1, testCycleRepository.findAll().size());
 	}
 
+	
+
 }
